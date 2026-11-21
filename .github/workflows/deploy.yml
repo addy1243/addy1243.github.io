@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: mkdir -p dist && cp index.html dist/index.html
+      - run: mkdir -p dist && cp index.html Adarsh_Pachat_Resume.pdf dist/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

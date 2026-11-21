@@ -6,25 +6,53 @@
 <script>document.documentElement.classList.add("js")</script>
 <script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>
 <style>
-:root{--paper:#efeee9;--ink:#171b20;--dim:#69727a;--line:rgba(24,34,43,.13);--blue:#2867e8;--pale:#dbeaff;--mono:'IBM Plex Mono',monospace;--sans:'Schibsted Grotesk',sans-serif}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}[hidden]{display:none!important}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:4px}.guides{position:fixed;inset:0;z-index:0;pointer-events:none;background:linear-gradient(90deg,transparent calc(17% - .5px),var(--line) 17%,transparent calc(17% + .5px),transparent calc(50% - .5px),var(--line) 50%,transparent calc(50% + .5px),transparent calc(83% - .5px),var(--line) 83%,transparent calc(83% + .5px))}#robot{position:fixed;inset:0;z-index:1;pointer-events:none}#robot canvas{width:100%;height:100%;display:block}.announcement{position:fixed;z-index:20;top:0;left:0;right:0;height:30px;background:#d9e7ff;display:flex;justify-content:center;align-items:center;font:500 10px var(--mono);letter-spacing:.03em;transition:transform .4s}.announcement a{padding:0 40px;text-align:center}.announcement a:hover{text-decoration:underline}.announcement button{position:absolute;right:18px;border:0;background:none;font-size:18px;cursor:pointer}.announcement.hidden{transform:translateY(-100%)}.nav{height:56px;position:fixed;z-index:19;top:30px;left:0;right:0;display:grid;grid-template-columns:17% 1fr auto 17%;align-items:center;background:rgba(239,238,233,.88);backdrop-filter:blur(8px);border-block:1px solid var(--line);transition:top .4s}.nav.compact{top:0}.brand{display:flex;align-items:center;gap:10px;padding-left:22px;font-weight:700;font-size:16px;white-space:nowrap}.brand-mark{width:25px;height:25px;border:2px solid var(--blue);border-radius:9px;display:grid;place-items:center;color:var(--blue);font-size:10px;font-weight:700}.nav-links{display:flex;justify-content:center;gap:clamp(18px,3vw,46px);font:500 10px var(--mono);letter-spacing:.05em}.nav-links a:hover{color:var(--blue)}.nav-label{padding:0 22px;border-inline:1px solid var(--line);height:100%;display:flex;align-items:center;font:500 10px var(--mono);white-space:nowrap}.nav-cta{justify-self:center;border:1px solid #8798ae;padding:9px 13px;font:500 10px var(--mono);white-space:nowrap}.nav-cta:hover{background:var(--blue);color:white;border-color:var(--blue)}.rail{position:fixed;z-index:5;right:2.5%;top:40%;display:flex;align-items:center;gap:12px;font:500 9px var(--mono);letter-spacing:.08em}.rail-dots{display:flex;flex-direction:column;gap:8px}.rail-dots i{width:3px;height:3px;background:#97a1aa;border-radius:50%}.rail-label{writing-mode:vertical-rl}.rail-label:before{content:'◉';color:var(--blue);margin-bottom:10px}.screen{position:relative;z-index:2;min-height:100svh;pointer-events:none}.screen a,.screen button{pointer-events:auto}.intro{padding-top:86px}.prompt{position:absolute;left:17%;top:29%;width:25%;max-width:355px;font:500 11px/1.6 var(--mono);text-transform:uppercase;letter-spacing:.03em}.prompt-quote{width:42px;height:42px;border:1px solid var(--ink);display:grid;place-items:center;font:700 35px Georgia,serif;border-bottom:0}.prompt-box{border:1px solid #2e383e;padding:17px;min-height:74px;background:rgba(239,238,233,.75)}.cursor{display:inline-block;width:6px;height:11px;margin-left:3px;background:var(--blue);animation:blink 1s steps(2) infinite;vertical-align:middle}@keyframes blink{50%{opacity:0}}.prompt-next{color:#a4adb3;font-size:9px;padding:9px 0}.feature-list{position:absolute;top:32%;right:17%;width:20%;font:500 10px var(--mono);letter-spacing:.05em}.feature-list div{border-top:1px solid var(--line);padding:9px 0;display:flex;gap:14px}.feature-list i{color:var(--blue);font-style:normal}.intro-bottom{position:absolute;left:6%;bottom:9%;max-width:500px}.eyebrow{font:500 10px var(--mono);letter-spacing:.1em;text-transform:uppercase}.intro h1{font-size:clamp(48px,6vw,92px);font-weight:400;letter-spacing:-.06em;line-height:.99;margin:16px 0}.intro h1 span{display:table;padding:1px 13px 6px;border:2px solid #5494f1;background:rgba(239,238,233,.5)}.intro h1 span+span{border-color:#3155c7;margin-top:5px}.intro-sub{position:absolute;bottom:8%;left:67%;width:210px;font-size:14px;line-height:1.5}.scroll-link{position:absolute;right:3%;bottom:10%;font:500 10px var(--mono);letter-spacing:.1em}.scroll-link span{font-size:20px;color:var(--blue)}.section-line{position:absolute;top:15%;left:17%;right:17%;border-top:1px solid var(--line)}.section-label{position:absolute;top:17%;left:17%;font:500 10px var(--mono);letter-spacing:.1em;color:#6c7680}.expertise-copy{position:absolute;left:7%;bottom:12%;max-width:460px}.section-heading{font-size:clamp(38px,4vw,66px);font-weight:400;line-height:1.05;letter-spacing:-.055em;margin:20px 0}.section-heading span{display:table;border:1px solid #88a8d3;border-radius:7px;padding:4px 10px;background:rgba(239,238,233,.7)}.expertise-copy p,.project-copy p{font-size:15px;line-height:1.7;color:#59636b;max-width:380px}.expertise-list{position:absolute;right:8%;bottom:12%;width:24%;font:500 10px var(--mono);letter-spacing:.05em}.expertise-list div{border-top:1px solid var(--line);padding:14px 0}.expertise-list span{color:var(--blue);margin-right:15px}.project-copy{position:absolute;left:7%;top:26%;max-width:340px}.project-copy h2{font-size:clamp(40px,4.5vw,72px);font-weight:400;line-height:1;letter-spacing:-.06em;margin:15px 0}.project-count{font:500 10px var(--mono);color:var(--blue);letter-spacing:.1em}.project-meta{font:500 10px/1.7 var(--mono);color:#65717c;letter-spacing:.04em;margin-top:20px}.project-link{display:inline-flex;align-items:center;gap:18px;border-bottom:1px solid var(--ink);padding:10px 0;font:500 10px var(--mono);letter-spacing:.08em}.project-controls{display:flex;gap:8px;margin-top:36px}.project-controls button{width:42px;height:42px;border:1px solid #89949e;border-radius:50%;background:transparent;cursor:pointer;font-size:18px}.project-controls button:hover{background:var(--blue);color:white;border-color:var(--blue)}.project-aside{position:absolute;right:8%;top:30%;width:20%;color:#9ba5ad;font:500 10px/1.7 var(--mono);letter-spacing:.04em}.project-aside strong{display:block;color:#485663;font:500 13px var(--mono);margin-bottom:10px}.footer{position:relative;z-index:3;min-height:30vh;border-top:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:18px;text-align:center;padding:40px 20px;font:500 10px var(--mono);letter-spacing:.09em;background:var(--paper)}.footer a{border-bottom:1px solid var(--blue);padding-bottom:5px}.footer span{color:var(--dim)}.js .rv{opacity:0;transform:translateY(20px);transition:opacity .8s,transform .8s}.rv.visible{opacity:1;transform:none}body.no-3d .robot-fallback{display:block}.robot-fallback{display:none;position:fixed;z-index:1;top:32%;left:50%;transform:translateX(-50%);width:180px;height:180px;border:10px solid #719def;border-radius:42px;background:#263e61;box-shadow:0 20px 45px #3a4b641e}.robot-fallback:after{content:'●  ●';display:grid;place-items:center;height:100%;color:#d7eaff;font:30px var(--mono)}@media(max-width:900px){.screen{min-height:max(100svh,760px)}.guides{background:linear-gradient(90deg,transparent calc(50% - .5px),var(--line) 50%,transparent calc(50% + .5px))}.nav{grid-template-columns:1fr auto}.brand{padding-left:16px}.nav-links,.nav-label,.rail,.feature-list,.project-aside{display:none}.nav-cta{margin-right:16px}.prompt{top:16%;left:5%;width:54%;max-width:320px;font-size:9px}.prompt-quote{width:32px;height:32px;font-size:27px}.prompt-box{padding:10px;min-height:58px}.prompt-next{display:none}.intro-bottom{left:5%;bottom:120px;max-width:90%}.intro h1{font-size:clamp(45px,10vw,78px)}.intro h1 span{background:rgba(239,238,233,.88)}.intro-sub{left:5%;right:5%;bottom:44px;width:auto;font-size:12px;text-align:left;background:rgba(239,238,233,.88)}.scroll-link{bottom:14px;left:5%;right:auto}.section-line{top:14%;left:5%;right:5%}.section-label{top:16%;left:5%}.expertise-copy{left:5%;bottom:9%;max-width:80%;background:rgba(239,238,233,.88);padding:8px}.expertise-list{right:5%;top:25%;bottom:auto;width:42%;background:rgba(239,238,233,.82)}.expertise-list div{padding:9px 0;font-size:9px}.project-copy{left:5%;top:23%;max-width:min(80%,340px);padding:10px;background:rgba(239,238,233,.88)}.project-copy h2{font-size:clamp(38px,9vw,65px)}.project-controls{margin-top:20px}}@media(max-height:650px){.screen{min-height:760px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}.rv{opacity:1;transform:none}}
+:root{--paper:#efeee9;--ink:#171b20;--dim:#69727a;--line:rgba(24,34,43,.13);--blue:#2867e8;--pale:#dbeaff;--mono:'IBM Plex Mono',monospace;--sans:'Schibsted Grotesk',sans-serif}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}[hidden]{display:none!important}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:4px}.guides{position:fixed;inset:0;z-index:0;pointer-events:none;background:linear-gradient(90deg,transparent calc(17% - .5px),var(--line) 17%,transparent calc(17% + .5px),transparent calc(50% - .5px),var(--line) 50%,transparent calc(50% + .5px),transparent calc(83% - .5px),var(--line) 83%,transparent calc(83% + .5px))}#robot{position:fixed;inset:0;z-index:1;pointer-events:none}#robot canvas{width:100%;height:100%;display:block}.announcement{position:fixed;z-index:20;top:0;left:0;right:0;height:30px;background:#d9e7ff;display:flex;justify-content:center;align-items:center;font:500 10px var(--mono);letter-spacing:.03em;transition:transform .4s}.announcement a{padding:0 40px;text-align:center}.announcement a:hover{text-decoration:underline}.announcement button{position:absolute;right:18px;border:0;background:none;font-size:18px;cursor:pointer}.announcement.hidden{transform:translateY(-100%)}.nav{height:56px;position:fixed;z-index:19;top:30px;left:0;right:0;display:grid;grid-template-columns:17% 1fr auto 17%;align-items:center;background:rgba(239,238,233,.88);backdrop-filter:blur(8px);border-block:1px solid var(--line);transition:top .4s}.nav.compact{top:0}.brand{display:flex;align-items:center;gap:10px;padding-left:22px;font-weight:700;font-size:16px;white-space:nowrap}.brand-mark{width:25px;height:25px;border:2px solid var(--blue);border-radius:9px;display:grid;place-items:center;color:var(--blue);font-size:10px;font-weight:700}.nav-links{display:flex;justify-content:center;gap:clamp(18px,3vw,46px);font:500 10px var(--mono);letter-spacing:.05em}.nav-links a:hover{color:var(--blue)}.nav-links .mobile-resume{display:none}.nav-label{padding:0 22px;border-inline:1px solid var(--line);height:100%;display:flex;align-items:center;font:500 10px var(--mono);white-space:nowrap}.nav-cta{justify-self:center;border:1px solid #8798ae;padding:9px 13px;font:500 10px var(--mono);white-space:nowrap}.nav-cta:hover{background:var(--blue);color:white;border-color:var(--blue)}.rail{position:fixed;z-index:5;right:2.5%;top:40%;display:flex;align-items:center;gap:12px;font:500 9px var(--mono);letter-spacing:.08em}.rail-dots{display:flex;flex-direction:column;gap:8px}.rail-dots i{width:3px;height:3px;background:#97a1aa;border-radius:50%}.rail-label{writing-mode:vertical-rl}.rail-label:before{content:'◉';color:var(--blue);margin-bottom:10px}.screen{position:relative;z-index:2;min-height:100svh;pointer-events:none}.screen a,.screen button{pointer-events:auto}.intro{padding-top:86px}.prompt{position:absolute;left:17%;top:29%;width:25%;max-width:355px;font:500 11px/1.6 var(--mono);text-transform:uppercase;letter-spacing:.03em}.prompt-quote{width:42px;height:42px;border:1px solid var(--ink);display:grid;place-items:center;font:700 35px Georgia,serif;border-bottom:0}.prompt-box{border:1px solid #2e383e;padding:17px;min-height:74px;background:rgba(239,238,233,.75)}.cursor{display:inline-block;width:6px;height:11px;margin-left:3px;background:var(--blue);animation:blink 1s steps(2) infinite;vertical-align:middle}@keyframes blink{50%{opacity:0}}.prompt-next{color:#a4adb3;font-size:9px;padding:9px 0}.feature-list{position:absolute;top:32%;right:17%;width:20%;font:500 10px var(--mono);letter-spacing:.05em}.feature-list div{border-top:1px solid var(--line);padding:9px 0;display:flex;gap:14px}.feature-list i{color:var(--blue);font-style:normal}.intro-bottom{position:absolute;left:6%;bottom:9%;max-width:min(410px,88%)}.eyebrow{font:500 10px var(--mono);letter-spacing:.1em;text-transform:uppercase}.intro h1{font-size:clamp(48px,6vw,92px);font-weight:400;letter-spacing:-.06em;line-height:.99;margin:16px 0}.intro h1 span{display:table;padding:1px 13px 6px;border:2px solid #5494f1;background:rgba(239,238,233,.5)}.intro h1 span+span{border-color:#3155c7;margin-top:5px}.intro-sub{max-width:370px;margin:0 0 14px;font-size:14px;line-height:1.5}.intro-actions{display:flex;flex-wrap:wrap;gap:8px}.intro-actions a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border:1px solid var(--blue);background:var(--paper);font:500 10px var(--mono)}.intro-actions a:first-child,.intro-actions a:hover{background:var(--blue);color:#fff}#experience,#projects{scroll-margin-top:68px}.section-line{position:absolute;top:15%;left:17%;right:17%;border-top:1px solid var(--line)}.section-label{position:absolute;top:17%;left:17%;font:500 10px var(--mono);letter-spacing:.1em;color:#6c7680}.expertise-copy{position:absolute;left:7%;bottom:12%;max-width:460px}.section-heading{font-size:clamp(38px,4vw,66px);font-weight:400;line-height:1.05;letter-spacing:-.055em;margin:20px 0}.section-heading span{display:table;border:1px solid #88a8d3;border-radius:7px;padding:4px 10px;background:rgba(239,238,233,.7)}.expertise-copy p,.project-copy p{font-size:15px;line-height:1.7;color:#59636b;max-width:380px}.expertise-list{position:absolute;right:8%;bottom:12%;width:24%;font:500 10px var(--mono);letter-spacing:.05em}.expertise-list div{border-top:1px solid var(--line);padding:14px 0}.expertise-list span{color:var(--blue);margin-right:15px}.project-copy{position:absolute;left:7%;top:26%;max-width:340px}.project-copy h2{font-size:clamp(40px,4.5vw,72px);font-weight:400;line-height:1;letter-spacing:-.06em;margin:15px 0}.project-count{font:500 10px var(--mono);color:var(--blue);letter-spacing:.1em}.project-meta{font:500 10px/1.7 var(--mono);color:#65717c;letter-spacing:.04em;margin-top:20px}.project-link{display:inline-flex;align-items:center;gap:18px;border-bottom:1px solid var(--ink);padding:10px 0;font:500 10px var(--mono);letter-spacing:.08em}.project-controls{display:flex;gap:8px;margin-top:36px}.project-controls button{width:42px;height:42px;border:1px solid #89949e;border-radius:50%;background:transparent;cursor:pointer;font-size:18px}.project-controls button:hover{background:var(--blue);color:white;border-color:var(--blue)}.project-aside{position:absolute;right:8%;top:30%;width:20%;color:#9ba5ad;font:500 10px/1.7 var(--mono);letter-spacing:.04em}.project-aside strong{display:block;color:#485663;font:500 13px var(--mono);margin-bottom:10px}.footer{position:relative;z-index:3;min-height:30vh;border-top:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:18px;text-align:center;padding:40px 20px;font:500 10px var(--mono);letter-spacing:.09em;background:var(--paper)}.footer a{border-bottom:1px solid var(--blue);padding-bottom:5px}.footer span{color:var(--dim)}.js .rv{opacity:0;transform:translateY(20px);transition:opacity .8s,transform .8s}.rv.visible{opacity:1;transform:none}body.no-3d .robot-fallback{display:block}.robot-fallback{display:none;position:absolute;z-index:-1;top:32%;left:50%;transform:translateX(-50%);width:180px;height:180px;border:10px solid #719def;border-radius:42px;background:#263e61;box-shadow:0 20px 45px #3a4b641e}.robot-fallback:after{content:'●  ●';display:grid;place-items:center;height:100%;color:#d7eaff;font:30px var(--mono)}@media(max-width:900px){.screen{min-height:max(100svh,760px)}.guides{background:linear-gradient(90deg,transparent calc(50% - .5px),var(--line) 50%,transparent calc(50% + .5px))}.nav{grid-template-columns:auto 1fr auto;padding:0 12px}.brand{min-width:44px;min-height:44px;padding-left:0}.nav-links{gap:clamp(8px,3vw,28px)}.nav-links a{display:inline-flex;align-items:center;min-height:44px;padding:0 4px}.nav-links .desktop-link,.nav-label,.rail,.feature-list,.project-aside{display:none}.nav-links .mobile-resume{display:inline-flex}.prompt{top:16%;left:5%;width:54%;max-width:320px;font-size:9px}.prompt-quote{width:32px;height:32px;font-size:27px}.prompt-box{padding:10px;min-height:58px}.prompt-next{display:none}.intro{min-height:max(100svh,600px);padding-top:0}.intro-bottom{left:5%;bottom:48px;max-width:90%}.intro h1{font-size:clamp(45px,10vw,78px)}.intro h1 span,.intro-sub,.intro-bottom .eyebrow{background:rgba(239,238,233,.92)}.intro-bottom .eyebrow{display:inline-block}.intro-sub{font-size:13px}#expertise{display:grid;gap:10px;min-height:auto;padding:32px 5%;border-top:1px solid var(--line)}.section-line,.section-label{display:none}.expertise-copy,.expertise-list{position:static;width:100%;max-width:none;background:rgba(239,238,233,.94);padding:8px}.expertise-list div{padding:9px 0;font-size:9px}.project-copy{left:5%;top:23%;max-width:min(80%,340px);padding:10px;background:rgba(239,238,233,.88)}.project-copy h2{font-size:clamp(38px,9vw,65px)}.project-controls{margin-top:20px}}@media(max-width:600px){.brand-name,.nav-cta{display:none}.nav{grid-template-columns:auto 1fr}.nav-links{justify-content:space-evenly}}@media(max-height:850px) and (min-width:901px){.prompt{top:max(94px,16%)}.intro h1{font-size:clamp(48px,min(6vw,9vh),92px)}}@media(max-height:650px) and (min-width:901px){.screen{min-height:760px}.intro{min-height:max(100svh,590px)}.intro-bottom{bottom:6%}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}.rv{opacity:1;transform:none}}
 
-.resume-section{position:relative;z-index:4;background:rgba(239,238,233,.32);border-top:1px solid var(--line);padding:90px 7% 80px}.resume-heading{display:flex;justify-content:space-between;align-items:end;gap:35px;border-bottom:1px solid var(--line);padding-bottom:35px}.resume-heading h2{font-size:clamp(42px,5vw,72px);line-height:1.02;letter-spacing:-.055em;font-weight:400;margin:18px 0 0}.resume-heading h2 span{color:#72849b}.resume-heading>p{max-width:260px;font-size:14px;line-height:1.6;color:var(--dim)}.resume-role{display:grid;grid-template-columns:1fr 1.4fr;gap:8%;padding:38px 0;border-bottom:1px solid var(--line)}.resume-date{font:500 10px var(--mono);color:var(--blue);letter-spacing:.06em}.resume-role h3{font-size:24px;letter-spacing:-.03em;margin:12px 0}.resume-role-title{align-self:start}.resume-role-title p{font:500 10px/1.6 var(--mono);color:var(--dim)}.resume-role>div:last-child{background:rgba(239,238,233,.96);padding:18px}.resume-role-title,.resume-heading>div,.resume-heading>p{background:rgba(239,238,233,.94);padding:10px}.resume-role>div:last-child p,.resume-role li,.education p{font-size:14px;line-height:1.7;color:#56626e}.resume-role>div:last-child p{margin-top:0}.resume-role ul{padding-left:18px;margin:18px 0 0}.resume-role li{padding:0 0 10px 5px}.education{display:grid;grid-template-columns:1fr 1.4fr;gap:8%;padding-top:55px}.education h3{font-size:32px;font-weight:400;letter-spacing:-.04em}.education p{margin:0 0 22px}.education strong{color:var(--ink)}.education span{font:500 10px var(--mono);color:var(--blue)}@media(max-width:700px){.resume-section{padding:65px 5%}.resume-heading{display:block}.resume-role,.education{grid-template-columns:1fr;gap:18px}.resume-role{padding:28px 0}.resume-heading>p{margin-top:20px}.education{padding-top:40px}}
+.resume-section{position:relative;z-index:4;background:rgba(239,238,233,.32);border-top:1px solid var(--line);padding:90px 7% 80px}.resume-heading{display:flex;justify-content:space-between;align-items:end;gap:35px;border-bottom:1px solid var(--line);padding-bottom:35px}.resume-heading h2{font-size:clamp(42px,5vw,72px);line-height:1.02;letter-spacing:-.055em;font-weight:400;margin:18px 0 0}.resume-heading h2 span{color:#72849b}.resume-heading>p{max-width:260px;font-size:14px;line-height:1.6;color:var(--dim)}.resume-role{display:grid;grid-template-columns:1fr 1.4fr;gap:8%;padding:38px 0;border-bottom:1px solid var(--line)}.resume-date{font:500 10px var(--mono);color:var(--blue);letter-spacing:.06em}.resume-role h3{font-size:24px;letter-spacing:-.03em;margin:12px 0}.resume-role-title{align-self:start}@media(min-width:901px){body:not(.no-3d) .resume-section{background:transparent}body:not(.no-3d) .resume-role-title{width:fit-content}}.resume-role-title p{font:500 10px/1.6 var(--mono);color:var(--dim)}.resume-role>div:last-child{background:rgba(239,238,233,.96);padding:18px}.resume-role-title,.resume-heading>div,.resume-heading>p{background:rgba(239,238,233,.94);padding:10px}.resume-role>div:last-child p,.resume-role li,.education p{font-size:14px;line-height:1.7;color:#56626e}.resume-role>div:last-child p{margin-top:0}.resume-role ul{padding-left:18px;margin:18px 0 0}.resume-role li{padding:0 0 10px 5px}.education{display:grid;grid-template-columns:1fr 1.4fr;gap:8%;padding-top:55px}.education h3{font-size:32px;font-weight:400;letter-spacing:-.04em}.education p{margin:0 0 22px}.education strong{color:var(--ink)}.education span{font:500 10px var(--mono);color:var(--blue)}@media(max-width:700px){.resume-section{padding:65px 5%}.resume-heading{display:block}.resume-role,.education{grid-template-columns:1fr;gap:18px}.resume-role{padding:28px 0}.resume-heading>p{margin-top:20px}.education{padding-top:40px}}
 
 .projects-section{position:relative;z-index:4;background:rgba(239,238,233,.84);border-top:1px solid var(--line);padding:80px 7% 95px}.projects-header{display:flex;justify-content:space-between;align-items:end;gap:30px;padding-bottom:35px}.projects-header h2{font-size:clamp(42px,5vw,72px);font-weight:400;line-height:1.02;letter-spacing:-.055em;margin:18px 0 0}.projects-header h2 span{color:#72849b}.projects-header>p{max-width:270px;font-size:14px;line-height:1.6;color:var(--dim)}.project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.work-card{border:1px solid #b9c5d2;background:rgba(245,247,248,.9);padding:25px;display:flex;flex-direction:column;min-height:270px}.work-card h3{font-size:30px;font-weight:500;letter-spacing:-.04em;margin:28px 0 12px}.work-card>p:not(.project-count){color:#586572;font-size:14px;line-height:1.6;margin:0}.work-card .project-meta{margin-top:auto;padding-top:24px}.work-card .project-link{align-self:flex-start;margin-top:14px}@media(max-width:850px){.projects-section{padding:65px 5%}.projects-header{display:block}.projects-header>p{margin-top:20px}.project-grid{grid-template-columns:1fr}.work-card{min-height:0}.work-card h3{margin-top:20px}}
 
 .motion-toggle{position:fixed;z-index:18;right:16px;bottom:14px;border:1px solid #9baec4;background:rgba(239,238,233,.92);padding:8px 10px;cursor:pointer;font:500 9px var(--mono);letter-spacing:.05em}.motion-paused .cursor{animation-play-state:paused}@media(max-width:400px){.announcement{font-size:8px}.announcement a{padding:0 36px 0 10px}.announcement button{right:10px}}
+
+.recharge{position:relative;z-index:4;display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr);align-items:center;gap:5%;min-height:90svh;padding:80px 7%;border-top:1px solid var(--line)}
+.recharge-view{height:min(62svh,620px);min-height:370px;border:1px solid var(--line);background:#e6e9ec}
+.recharge-copy h2{font-size:clamp(38px,4vw,64px);font-weight:400;line-height:1.04;letter-spacing:-.055em;margin:14px 0}
+.recharge-copy p:not(.eyebrow){max-width:320px;color:#59636b;line-height:1.65}
+.recharge-copy .intro-actions{margin-top:22px}
+body.no-3d .recharge,body.no-3d .recharge-view{display:block;min-height:0}
+body.no-3d .recharge-view{display:none}
+@media(max-width:900px){
+ .recharge{display:block;min-height:0;padding:55px 5%;background:var(--paper)}
+ .recharge-view{display:none}
+ body:not(.no-3d) .recharge{background:rgba(239,238,233,.86)}
+ body:not(.no-3d) .projects-section{background:rgba(239,238,233,.36)}
+}
+@media(max-width:400px) and (max-height:650px){.intro-bottom{bottom:82px}}
 </style>
 </head>
 <body class="no-3d">
-<button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="false">PAUSE MOTION</button><div class="guides" aria-hidden="true"></div><div id="robot" aria-hidden="true"></div><div class="robot-fallback" aria-hidden="true"></div>
+<button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="false">PAUSE MOTION</button><div class="guides" aria-hidden="true"></div><div id="robot" aria-hidden="true"></div>
 <div class="announcement" id="announcement"><a href="#projects">SELECTED WORK: EXPLORE THE PROJECTS BEHIND THE CODE ↗</a><button id="dismiss" aria-label="Dismiss announcement">×</button></div>
-<header class="nav" id="nav"><a class="brand" href="#home"><span class="brand-mark">AP</span> ADARSH PACHAT</a><nav class="nav-links" aria-label="Main navigation"><a href="#home">INTRO</a><a href="#experience">EXPERIENCE</a><a href="#projects">PROJECTS</a><a href="https://github.com/addy1243" target="_blank" rel="noreferrer">GITHUB ↗</a></nav><span class="nav-label">DEVOPS / CLOUD</span><a class="nav-cta" href="mailto:pachatadarsh.work@gmail.com">•• GET IN TOUCH ↗</a></header>
+<header class="nav" id="nav"><a class="brand" href="#home" aria-label="Adarsh Pachat, home"><span class="brand-mark" aria-hidden="true">AP</span><span class="brand-name">ADARSH PACHAT</span></a><nav class="nav-links" aria-label="Main navigation"><a class="desktop-link" href="#home">INTRO</a><a href="#experience">EXPERIENCE</a><a href="#projects">PROJECTS</a><a class="desktop-link" href="https://github.com/addy1243" target="_blank" rel="noreferrer">GITHUB ↗</a><a class="mobile-resume" href="Adarsh_Pachat_Resume.pdf" download>RÉSUMÉ</a></nav><span class="nav-label">DEVOPS / CLOUD</span><a class="nav-cta" href="mailto:pachatadarsh.work@gmail.com">•• GET IN TOUCH ↗</a></header>
 <div class="rail" aria-hidden="true"><div class="rail-dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="rail-label" id="rail-label">INTRO</span></div>
 <main>
-<section class="screen intro" id="home" data-label="INTRO"><div class="prompt rv"><div class="prompt-quote">“</div><div class="prompt-box"><span id="typed">BUILD CLOUD SYSTEMS THAT WORK RELIABLY.</span><span class="cursor"></span></div><div class="prompt-next">NEXT / AUTOMATE THE REPETITIVE WORK</div></div><div class="feature-list rv"><div><i>●</i> CLOUD INFRASTRUCTURE</div><div><i>●</i> PLATFORM & DELIVERY</div><div><i>●</i> IDENTITY & SECURITY</div><div><i>●</i> AUTOMATION & AI</div></div><div class="intro-bottom rv"><div class="eyebrow">HELLO, I'M ADARSH / DEVOPS ENGINEER</div><h1><span>Building</span><span>Reliability.</span></h1></div><p class="intro-sub rv">Cloud infrastructure, thoughtful automation and security—built to work together.</p><a class="scroll-link" href="#expertise">SCROLL &nbsp; [ <span>↓</span> ]</a></section>
+<section class="screen intro" id="home" data-label="INTRO"><div class="robot-fallback" aria-hidden="true"></div><div class="prompt rv"><div class="prompt-quote">“</div><div class="prompt-box"><span id="typed">BUILD CLOUD SYSTEMS THAT WORK RELIABLY.</span><span class="cursor"></span></div><div class="prompt-next">NEXT / AUTOMATE THE REPETITIVE WORK</div></div><div class="feature-list rv"><div><i>●</i> CLOUD INFRASTRUCTURE</div><div><i>●</i> PLATFORM & DELIVERY</div><div><i>●</i> IDENTITY & SECURITY</div><div><i>●</i> AUTOMATION & AI</div></div><div class="intro-bottom rv"><div class="eyebrow">HELLO, I'M ADARSH / DEVOPS ENGINEER</div><h1><span>Building</span><span>Reliability.</span></h1><p class="intro-sub">At Aspora, I built and operated AWS infrastructure and Kubernetes environments, and automated access management.</p><div class="intro-actions"><a href="#experience">VIEW EXPERIENCE ↓</a><a href="Adarsh_Pachat_Resume.pdf" download>DOWNLOAD RÉSUMÉ ↗</a></div></div></section>
 <section class="screen" id="expertise" data-label="EXPERIENCE"><div class="section-line"></div><div class="section-label rv">01 / EXPERIENCE & EXPERTISE</div><div class="expertise-copy rv"><div class="eyebrow">·· &nbsp; BEHIND THE SYSTEMS</div><h2 class="section-heading"><span>From cloud</span> to delivery.</h2><p>I’m a DevOps engineer who enjoys making complex systems simpler and more dependable. At Aspora, I worked across AWS, Kubernetes, identity and security automation.</p><a class="project-link" href="#experience">EXPLORE EXPERIENCE &nbsp; ↓</a></div><div class="expertise-list rv"><div><span>01</span> AWS / GCP / FIREBASE</div><div><span>02</span> TERRAFORM / TERRAGRUNT</div><div><span>03</span> KUBERNETES / DOCKER / HELM</div><div><span>04</span> GITHUB ACTIONS / ARGO CD</div><div><span>05</span> OKTA / IAM / SECURITY</div></div></section>
-<section class="resume-section" id="experience" aria-labelledby="experience-title"><div class="resume-heading"><div><p class="eyebrow">02 / THE EXPERIENCE</p><h2 id="experience-title">Work that<br/><span>makes an impact.</span></h2></div><p>From cloud infrastructure and access management to design and development.</p></div><article class="resume-role"><div class="resume-role-title"><span class="resume-date">DEC 2025 — AUG 2026</span><h3>Aspora Financial Services</h3><p>DEVOPS ENGINEER (SDE1) / GIFT CITY, GUJARAT</p></div><div><p>Built and operated secure, repeatable infrastructure and helped automate the systems that support a growing team.</p><ul><li>Administered multi-account AWS infrastructure with Terraform, Terragrunt, AWS Organizations, IAM and permission sets.</li><li>Built a dedicated QA environment with EKS, RDS and 10+ MySQL and PostgreSQL databases, migrated stage data and configured Kong and Kafka.</li><li>Supported EKS, ECS, RDS, SES and CloudWatch across stage, QA and production; deployed platform services with Helm, Docker, GitHub Actions and Argo CD.</li><li>Managed Okta and Google Workspace/GCP access for approximately 300 users, implemented SSO/SAML and automated onboarding, offboarding, access requests and audits.</li><li>Managed macOS endpoints with Jamf, administered CrowdStrike and configured Cloudflare Tunnels for internal services.</li><li>Built RDS database activity monitoring with SIEM alerts for PII access and data-changing queries.</li><li>Used Claude and AI agents to assist with Terraform, scripting, documentation and troubleshooting, reviewing outputs through iteration.</li></ul></div></article><article class="resume-role"><div class="resume-role-title"><span class="resume-date">MAY 2025 — JUL 2025</span><h3>Sparks To Ideas</h3><p>UI/UX DESIGN INTERN / AHMEDABAD</p></div><div><p>Designed and prototyped a fitness-tracking mobile app and an internal admin dashboard, from wireframes and Figma designs to interactive prototypes and handoff documentation.</p></div></article></section>
+<section class="resume-section" id="experience" aria-labelledby="experience-title"><div class="resume-heading"><div><p class="eyebrow">02 / THE EXPERIENCE</p><h2 id="experience-title">Work that<br/><span>makes an impact.</span></h2></div><p>From cloud infrastructure and access management to design and development.</p></div><article class="resume-role" id="aspora"><div class="resume-role-title"><span class="resume-date">DEC 2025 — AUG 2026</span><h3>Aspora Financial Services</h3><p>DEVOPS ENGINEER (SDE1) / GIFT CITY, GUJARAT</p></div><div><p>Built and operated secure, repeatable infrastructure and helped automate the systems that support a growing team.</p><ul><li>Administered multi-account AWS infrastructure with Terraform, Terragrunt, AWS Organizations, IAM and permission sets.</li><li>Built a dedicated QA environment with EKS, RDS and 10+ MySQL and PostgreSQL databases, migrated stage data and configured Kong and Kafka.</li><li>Supported EKS, ECS, RDS, SES and CloudWatch across stage, QA and production; deployed platform services with Helm, Docker, GitHub Actions and Argo CD.</li><li>Managed Okta and Google Workspace/GCP access for approximately 300 users, implemented SSO/SAML and automated onboarding, offboarding, access requests and audits.</li><li>Managed macOS endpoints with Jamf, administered CrowdStrike and configured Cloudflare Tunnels for internal services.</li><li>Built RDS database activity monitoring with SIEM alerts for PII access and data-changing queries.</li><li>Used Claude and AI agents to assist with Terraform, scripting, documentation and troubleshooting, reviewing outputs through iteration.</li></ul></div></article><article class="resume-role"><div class="resume-role-title"><span class="resume-date">MAY 2025 — JUL 2025</span><h3>Sparks To Ideas</h3><p>UI/UX DESIGN INTERN / AHMEDABAD</p></div><div><p>Designed and prototyped a fitness-tracking mobile app and an internal admin dashboard, from wireframes and Figma designs to interactive prototypes and handoff documentation.</p></div></article></section>
 <section class="projects-section" id="projects" data-label="PROJECTS"><div class="projects-header"><div><p class="eyebrow">03 / SELECTED PROJECTS</p><h2>Ideas into<br/><span>practice.</span></h2></div><p>A selection of real projects, from protecting devices to connecting music across them.</p></div><div class="project-grid"><article class="work-card"><p class="project-count">01 / CROSS-PLATFORM · PERSONAL</p><h3>Echo</h3><p>A music player for Android and Windows with optional Firebase library sync and connected playback across devices.</p><div class="project-meta">KOTLIN / COMPOSE / FIREBASE</div><a class="project-link" href="https://github.com/addy1243/Echo" target="_blank" rel="noreferrer">VIEW ON GITHUB &nbsp; ↗</a></article><article class="work-card"><p class="project-count">02 / ANDROID · PERSONAL</p><h3>Secure You</h3><p>An Android security application that records failed device login attempts and sends a high-priority notification.</p><div class="project-meta">FLUTTER / KOTLIN / FIREBASE</div></article><article class="work-card"><p class="project-count">03 / AI · ACADEMIC</p><h3>Interview Bot</h3><p>An AI-assisted interview platform designed to evaluate candidates through personalized, standardized interviews.</p><div class="project-meta">KAFKA / DOCKER / gRPC</div></article></div></section>
+<section class="recharge" id="recharge" aria-labelledby="recharge-title">
+ <div class="recharge-view" aria-hidden="true"></div>
+ <div class="recharge-copy">
+  <p class="eyebrow">04 / RECHARGE</p>
+  <h2 id="recharge-title">Get to know me.</h2>
+  <p>I’m Adarsh, a DevOps engineer. I enjoy making cloud infrastructure easier to operate and building projects like Echo in my spare time.</p>
+  <div class="intro-actions">
+   <a href="Adarsh_Pachat_Resume.pdf" download>DOWNLOAD RÉSUMÉ ↗</a>
+   <a href="mailto:pachatadarsh.work@gmail.com">EMAIL ME ↗</a>
+   <a href="https://github.com/addy1243" target="_blank" rel="noreferrer">GITHUB ↗</a>
+  </div>
+ </div>
+</section>
 </main><footer class="footer"><a href="mailto:pachatadarsh.work@gmail.com">LET'S BUILD SOMETHING GOOD TOGETHER ↗</a><span>ADARSH PACHAT · GUJARAT, INDIA · 2026</span></footer>
 <script>
 window.portfolioMotionPaused=false;const motionToggle=document.getElementById('motion-toggle');motionToggle.addEventListener('click',()=>{window.portfolioMotionPaused=!window.portfolioMotionPaused;motionToggle.textContent=window.portfolioMotionPaused?'RESUME MOTION':'PAUSE MOTION';motionToggle.setAttribute('aria-pressed',String(window.portfolioMotionPaused));document.body.classList.toggle('motion-paused',window.portfolioMotionPaused)});const announcement=document.getElementById('announcement'),nav=document.getElementById('nav');let dismissed=false;function chrome(){const hidden=dismissed||scrollY>40;announcement.classList.toggle('hidden',hidden);announcement.inert=hidden;nav.classList.toggle('compact',hidden)}document.getElementById('dismiss').addEventListener('click',()=>{dismissed=true;chrome()});addEventListener('scroll',chrome,{passive:true});
@@ -36,28 +64,433 @@ import * as THREE from 'three';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 try {
-const mount=document.getElementById('robot'),scene=new THREE.Scene(),renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setSize(innerWidth,innerHeight);renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;mount.appendChild(renderer.domElement);document.body.classList.remove('no-3d');renderer.domElement.addEventListener('webglcontextlost',()=>document.body.classList.add('no-3d'));
+const mount=document.getElementById('robot'),scene=new THREE.Scene(),renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setSize(innerWidth,innerHeight,false);renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;mount.appendChild(renderer.domElement);document.body.classList.remove('no-3d');renderer.domElement.addEventListener('webglcontextlost',()=>document.body.classList.add('no-3d'));
 const pmrem=new THREE.PMREMGenerator(renderer);scene.environment=pmrem.fromScene(new RoomEnvironment(),.04).texture;const camera=new THREE.PerspectiveCamera(30,innerWidth/innerHeight,.1,100);scene.add(new THREE.HemisphereLight(0xffffff,0xc8d5e6,.9));const light=new THREE.DirectionalLight(0xffffff,2.2);light.position.set(-3,5,5);light.castShadow=true;light.shadow.mapSize.set(1024,1024);scene.add(light);const rim=new THREE.DirectionalLight(0x9bc4ff,1.8);rim.position.set(4,2,-4);scene.add(rim);const fill=new THREE.PointLight(0x428bff,18,8);fill.position.set(-3,1,2);scene.add(fill);
-const shell=new THREE.MeshPhysicalMaterial({color:0xe8edf1,roughness:.37,clearcoat:.5,clearcoatRoughness:.3}),lightShell=new THREE.MeshPhysicalMaterial({color:0xf9fbff,roughness:.32,clearcoat:.5}),dark=new THREE.MeshStandardMaterial({color:0x202733,roughness:.5,metalness:.28}),blue=new THREE.MeshPhysicalMaterial({color:0x3b7bfa,emissive:0x1546af,emissiveIntensity:.22,roughness:.38,clearcoat:.5}),screenMat=new THREE.MeshPhysicalMaterial({color:0x0c1422,roughness:.16,clearcoat:1}),eyeMat=new THREE.MeshBasicMaterial({color:0xddeeff}),pedestalMat=new THREE.MeshStandardMaterial({color:0x29333f,roughness:.85});
+const shell=new THREE.MeshPhysicalMaterial({color:0xe8edf1,roughness:.37,clearcoat:.5,clearcoatRoughness:.3}),lightShell=new THREE.MeshPhysicalMaterial({color:0xf9fbff,roughness:.32,clearcoat:.5}),dark=new THREE.MeshStandardMaterial({color:0x202733,roughness:.5,metalness:.28}),blue=new THREE.MeshPhysicalMaterial({color:0x3b7bfa,emissive:0x1546af,emissiveIntensity:.22,roughness:.38,clearcoat:.5}),screenMat=new THREE.MeshPhysicalMaterial({color:0x0c1422,roughness:.16,clearcoat:1}),eyeMat=new THREE.MeshBasicMaterial({color:0xddeeff,transparent:true,depthWrite:false}),pedestalMat=new THREE.MeshStandardMaterial({color:0x29333f,roughness:.85});
 function box(parent,w,h,d,r,mat,x,y,z){const m=new THREE.Mesh(new RoundedBoxGeometry(w,h,d,4,r),mat);m.position.set(x,y,z);m.castShadow=true;m.receiveShadow=true;parent.add(m);return m}function sphere(parent,r,mat,x,y,z){const m=new THREE.Mesh(new THREE.SphereGeometry(r,20,14),mat);m.position.set(x,y,z);m.castShadow=true;parent.add(m);return m}function cylinder(parent,r,h,mat,x,y,z){const m=new THREE.Mesh(new THREE.CylinderGeometry(r,r,h,24),mat);m.position.set(x,y,z);m.castShadow=true;parent.add(m);return m}
-const bot=new THREE.Group();scene.add(bot);box(bot,1.25,1.08,.9,.2,shell,0,0,0);box(bot,1.07,.18,.78,.08,lightShell,0,.48,.05);box(bot,.86,.3,.72,.1,dark,0,-.65,0);cylinder(bot,.23,.28,dark,0,.64,0);for(let i=-1;i<=1;i++)sphere(bot,.036,i===0?blue:dark,i*.15,.28,.47);for(const side of [-1,1]){sphere(bot,.21,dark,side*.72,.34,0);const arm=new THREE.Group();arm.position.set(side*.75,.32,0);arm.rotation.z=-side*.18;bot.add(arm);box(arm,.36,.7,.45,.12,shell,side*.1,-.35,0);sphere(arm,.17,dark,side*.14,-.72,0);box(arm,.38,.57,.42,.12,lightShell,side*.18,-1.02,.1);sphere(bot,.22,dark,side*.36,-.72,0);box(bot,.4,.7,.52,.12,shell,side*.36,-1.03,0);sphere(bot,.15,dark,side*.36,-1.42,0);box(bot,.46,.2,.76,.08,lightShell,side*.36,-1.55,.14)}
-const head=new THREE.Group();head.position.y=.75;bot.add(head);box(head,1.52,1.42,1.22,.2,shell,0,.72,0);box(head,1.37,1.24,.16,.18,blue,0,.72,.6);box(head,1.13,1.01,.12,.15,lightShell,0,.72,.7);box(head,.98,.86,.1,.15,screenMat,0,.72,.77);const eyes=[];for(const side of [-1,1]){let e=sphere(head,.085,eyeMat,side*.24,.72,.84);e.scale.set(.8,1.2,.22);eyes.push(e);const ear=cylinder(head,.21,.18,dark,side*.82,.72,0);ear.rotation.z=Math.PI/2}const faceCanvas=document.createElement('canvas');faceCanvas.width=256;faceCanvas.height=256;const faceCtx=faceCanvas.getContext('2d');faceCtx.fillStyle='#e2efff';faceCtx.font='bold 230px Georgia';faceCtx.textAlign='center';faceCtx.fillText('“',128,205);const quote=new THREE.Mesh(new THREE.PlaneGeometry(.8,.7),new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(faceCanvas),transparent:true,depthWrite:false}));quote.position.set(0,.72,.86);quote.visible=false;head.add(quote);const pedestal=box(scene,1.85,1.5,1.8,.04,pedestalMat,0,-2.4,0);pedestal.receiveShadow=true;
-const motionReduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
-function robotOffset(p, halfWidth, reduced){
- if(p<=0||p>=1)return 0;
- const left=-halfWidth*.52;
- if(reduced)return left;
- const smooth=x=>{x=Math.max(0,Math.min(1,x));return x*x*(3-2*x)};
- const outside=halfWidth+2.5;
- if(p<.18)return outside*smooth(p/.18);
- if(p<.2)return outside;
- if(p<.38)return -outside+(outside+left)*smooth((p-.2)/.18);
- if(p<.78)return left;
- return left*(1-smooth((p-.78)/.22));
+const bot=new THREE.Group(),arms=[],legs=[];
+scene.add(bot);
+box(bot,1.25,1.08,.9,.2,shell,0,0,0);
+box(bot,1.07,.18,.78,.08,lightShell,0,.48,.05);
+box(bot,.86,.3,.72,.1,dark,0,-.65,0);
+cylinder(bot,.23,.28,dark,0,.64,0);
+for(let i=-1;i<=1;i++)sphere(bot,.036,i===0?blue:dark,i*.15,.28,.47);
+for(const side of [-1,1]){
+ sphere(bot,.21,dark,side*.72,.34,0);
+ const arm=new THREE.Group();
+ arm.position.set(side*.75,.32,0);
+ bot.add(arm);
+ box(arm,.36,.7,.45,.12,shell,side*.1,-.35,0);
+ const elbow=sphere(arm,.17,dark,side*.14,-.72,0);
+ box(elbow,.38,.57,.42,.12,lightShell,side*.04,-.30,.1);
+ const grip=new THREE.Vector3(side*.04,-.56,.10);
+ arms.push({arm,elbow,grip,side});
+
+ const hip=sphere(bot,.22,dark,side*.36,-.72,0);
+ box(hip,.4,.43,.52,.12,shell,0,-.21,0);
+ const knee=sphere(hip,.155,dark,0,-.42,0);
+ box(knee,.38,.3,.49,.10,shell,0,-.14,0);
+ sphere(knee,.15,dark,0,-.28,0);
+ box(knee,.46,.2,.76,.08,lightShell,0,-.41,.14);
+ legs.push({hip,knee});
 }
-let mx=0,my=0,sx=0,sy=0,progress=0;addEventListener('pointermove',e=>{if(!motionReduced){mx=e.clientX/innerWidth*2-1;my=e.clientY/innerHeight*2-1}},{passive:true});function resize(){camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setSize(innerWidth,innerHeight)}addEventListener('resize',resize);function render(t){if(window.portfolioMotionPaused||document.hidden){requestAnimationFrame(render);return}const projectTop=document.getElementById('projects').offsetTop,expertiseTop=document.getElementById('expertise').offsetTop;const target=scrollY<projectTop?Math.min(1,scrollY/Math.max(expertiseTop,1)):Math.min(2,1+(scrollY-projectTop)/Math.max(innerHeight*.6,1));progress=motionReduced?target:progress+(target-progress)*.08;sx+=(mx-sx)*.06;sy+=(my-sy)*.06;const close=Math.min(1,progress);camera.position.set((innerWidth<900?.9:1.05)+sx*.22,1.05+close*.65-sy*.08,(innerWidth<900?1.23:1)*(11.6-close*2.5));camera.lookAt(0,.4+close*.8,0);const experience=document.getElementById('experience');const heading=experience.querySelector('#experience-title');const roleLine=experience.querySelector('.resume-role-title p');const journeyStart=heading.getBoundingClientRect().top+scrollY-innerHeight*.85;const journeyEnd=roleLine.getBoundingClientRect().bottom+scrollY-innerHeight*.6;const journey=(scrollY-journeyStart)/Math.max(journeyEnd-journeyStart,1);const halfWidth=Math.tan(THREE.MathUtils.degToRad(camera.fov/2))*camera.position.z*camera.aspect;const shift=robotOffset(journey,halfWidth,motionReduced);bot.position.x=shift;pedestal.position.x=shift;bot.rotation.y=-.35+close*.18+sx*.12;bot.position.y=motionReduced?0:Math.sin(t*.0014)*.02;const travelTilt=motionReduced||journey<=0?0:journey<.18?-.35*Math.min(1,journey/.12):journey<.2?-.35:journey<.29?.35*Math.min(1,(journey-.2)/.05):journey<.38?.35*(1-(journey-.29)/.09):0;head.rotation.set(.1+sy*.12, -.35+close*.3+sx*.25,.16*(1-close)+travelTilt+(motionReduced?0:Math.sin(t*.0007)*.02));const blink=motionReduced?1:(Math.sin(t*.0012)> .995?.15:1);eyes.forEach(e=>{e.scale.y=blink*1.2;e.visible=progress<1.55});quote.visible=progress>=1.55;renderer.render(scene,camera);requestAnimationFrame(render)}requestAnimationFrame(render);
+const head=new THREE.Group();head.position.y=.75;bot.add(head);box(head,1.52,1.42,1.22,.2,shell,0,.72,0);box(head,1.37,1.24,.16,.18,blue,0,.72,.6);box(head,1.13,1.01,.12,.15,lightShell,0,.72,.7);box(head,.98,.86,.1,.15,screenMat,0,.72,.77);const eyes=[];for(const side of [-1,1]){let e=sphere(head,.085,eyeMat,side*.24,.72,.84);e.scale.set(.8,1.2,.22);eyes.push(e);const ear=cylinder(head,.21,.18,dark,side*.82,.72,0);ear.rotation.z=Math.PI/2}const pedestal=box(scene,1.85,1.5,1.8,.04,pedestalMat,0,-2.4,0);pedestal.receiveShadow=true;
+const motionReduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const chargeCanvas=document.createElement('canvas');
+chargeCanvas.width=512;
+chargeCanvas.height=384;
+const chargeFace=chargeCanvas.getContext('2d');
+chargeFace.fillStyle='#d9efff';
+chargeFace.fillRect(159,85,180,102);
+chargeFace.fillRect(339,116,16,40);
+chargeFace.fillStyle='#0c1422';
+chargeFace.fillRect(168,94,162,84);
+chargeFace.fillStyle='#7babff';
+chargeFace.fillRect(179,105,112,62);
+chargeFace.font='bold 72px monospace';
+chargeFace.textAlign='center';
+chargeFace.fillText('CHARGING',256,278);
+const chargeScreen=new THREE.Mesh(new THREE.PlaneGeometry(.90,.69),new THREE.MeshBasicMaterial({
+ map:new THREE.CanvasTexture(chargeCanvas),transparent:true,depthWrite:false
+}));
+chargeScreen.position.set(0,.72,.855);
+chargeScreen.visible=false;
+head.add(chargeScreen);
+
+const room=new THREE.Group();
+scene.add(room);
+const wallMat=new THREE.MeshStandardMaterial({color:0xe2e8ef,roughness:.92});
+const floorMat=new THREE.MeshStandardMaterial({color:0xc6d0dc,roughness:.84});
+const cableMat=new THREE.MeshStandardMaterial({color:0x203044,roughness:.8});
+box(room,7.6,.12,6.2,.06,floorMat,0,-1.72,.15);
+box(room,7.6,4.65,.14,.06,wallMat,0,.62,-2.22);
+box(room,.14,4.65,6.2,.055,wallMat,-3.8,.62,.15);
+box(room,7.54,.13,.10,.035,lightShell,0,-1.56,-2.10);
+
+const chair=new THREE.Group();
+chair.position.set(-.4,0,.08);
+room.add(chair);
+box(chair,1.59,.18,.98,.09,dark,0,-1.28,-.39);
+box(chair,1.49,.13,.92,.06,blue,0,-1.15,-.39);
+box(chair,1.48,1.31,.18,.08,dark,0,-.52,-.77);
+box(chair,1.35,1.12,.17,.08,blue,0,-.49,-.68);
+for(const x of [-.64,.64]){
+ for(const z of [-.68,.02])box(chair,.14,.27,.14,.04,dark,x,-1.52,z);
+}
+const socket=box(room,.64,.53,.10,.06,lightShell,1.95,-.58,-2.09);
+box(socket,.065,.15,.04,.015,dark,-.21,.04,.055);
+box(socket,.065,.15,.04,.015,dark,-.09,.04,.055);
+const adapter=box(room,.32,.31,.24,.055,dark,2.07,-.61,-1.92);
+box(adapter,.09,.03,.025,.01,blue,0,.065,.127);
+const cableStart=new THREE.Vector3(2.07,-.75,-1.79);
+const connectorRest=new THREE.Vector3(.91,-1.41,.28);
+const portPosition=new THREE.Vector3(.655,-.20,.28);
+const port=box(bot,.085,.17,.19,.038,dark,.64,-.20,.28);
+const chargingLight=new THREE.MeshBasicMaterial({color:0x87bfff});
+const portLight=box(port,.012,.028,.066,.005,chargingLight,.049,.044,0);
+const connector=new THREE.Group();
+room.add(connector);
+box(connector,.16,.12,.14,.035,dark,0,0,0);
+box(connector,.055,.07,.075,.016,lightShell,-.085,0,0);
+const cableGeometry=new THREE.CylinderGeometry(.022,.022,1,10);
+const cable=new THREE.CatmullRomCurve3([
+ cableStart,new THREE.Vector3(2.11,-1.37,-1.72),
+ new THREE.Vector3(1.69,-1.59,-.45),new THREE.Vector3(),new THREE.Vector3()
+]);
+const cableSegments=Array.from({length:24},()=>{
+ const segment=new THREE.Mesh(cableGeometry,cableMat);
+ room.add(segment);
+ return segment;
+});
+const cableA=new THREE.Vector3(),cableB=new THREE.Vector3(),cableDirection=new THREE.Vector3();
+const up=new THREE.Vector3(0,1,0);
+function drawCable(endpoint){
+ cable.points[3].set(endpoint.x+.28,Math.max(-1.6,endpoint.y-.47),endpoint.z+.2);
+ cable.points[4].copy(endpoint);
+ cable.getPoint(0,cableA);
+ for(const [index,segment] of cableSegments.entries()){
+  cable.getPoint((index+1)/cableSegments.length,cableB);
+  cableDirection.subVectors(cableB,cableA);
+  segment.position.copy(cableA).addScaledVector(cableDirection,.5);
+  segment.scale.y=Math.max(cableDirection.length()+.008,.008);
+  segment.quaternion.setFromUnitVectors(up,cableDirection.normalize());
+  cableA.copy(cableB);
+ }
+}
+
+const {damp,lerp,smoothstep,clamp}=THREE.MathUtils;
+const desktop=matchMedia('(min-width:901px)');
+const intro=document.getElementById('home'),expertise=document.getElementById('expertise');
+const experience=document.getElementById('experience'),aspora=document.getElementById('aspora');
+const title=aspora.querySelector('.resume-role-title'),description=title.nextElementSibling;
+const roleLabel=title.querySelector('p');
+const projects=document.getElementById('projects');
+const cards=[...projects.querySelectorAll('.work-card')];
+const recharge=document.getElementById('recharge'),roomView=recharge.querySelector('.recharge-view');
+const neutral=new THREE.Vector3();
+const desired=new THREE.Vector3(),startPosition=new THREE.Vector3();
+const rayOrigin=new THREE.Vector3(),rayPoint=new THREE.Vector3();
+const gripTarget=new THREE.Vector3(),plugTarget=new THREE.Vector3();
+const armBind=new THREE.Vector3(),armDirection=new THREE.Vector3(),elbowDirection=new THREE.Vector3();
+const lowerDirection=new THREE.Vector3(),localTarget=new THREE.Vector3();
+const inverse=new THREE.Quaternion();
+const jumpLand=new THREE.Vector3(),jumpAnchor=new THREE.Vector3();
+const cameraLook=new THREE.Vector3();
+function aimAtRoom(view){
+ camera.clearViewOffset();
+ camera.aspect=view.width/view.height;
+ camera.updateProjectionMatrix();
+ camera.position.set(3.8,2.4,9.7);
+ camera.lookAt(.26,-.22,-.36);
+ camera.updateMatrixWorld();
+}
+function jumpToChair(progress,view,card,sx,sy){
+ aimAtRoom(view);
+ jumpLand.set(-.40,0,.67).project(camera);
+ const landingX=view.left+(jumpLand.x+1)*view.width/2;
+ const landingY=view.top+(1-jumpLand.y)*view.height/2;
+
+ // Draw the room first. The robot stays on the full canvas until it lands.
+ connector.position.copy(connectorRest);
+ connector.rotation.y=0;
+ drawCable(connector.position);
+ bot.visible=false;
+ renderer.setViewport(view.left,innerHeight-view.bottom,view.width,view.height);
+ renderer.render(scene,camera);
+ bot.visible=true;
+ room.visible=false;
+
+ const travel=smoothstep(progress,0,1);
+ const arc=Math.sin(Math.PI*progress);
+ const width=lerp(innerWidth,view.width,travel),height=lerp(innerHeight,view.height,travel);
+ camera.aspect=width/height;
+ camera.updateProjectionMatrix();
+ camera.position.set(lerp(1.05+sx*.22,3.8,travel),lerp(1.70-sy*.08,2.4,travel),lerp(10.5,9.7,travel));
+ cameraLook.set(.26*travel,lerp(1.20,-.22,travel),-.36*travel);
+ camera.lookAt(cameraLook);
+ camera.updateMatrixWorld();
+ bot.position.set(-.4*travel,0,.67*travel);
+ bot.rotation.y=-.40*travel;
+ head.rotation.set(lerp(.06,.08,travel),.12*travel,lerp(.012,.03,travel));
+ for(const {hip,knee} of legs){
+  hip.rotation.x=-.56*arc;
+  knee.rotation.x=.83*arc;
+ }
+ jumpAnchor.copy(bot.position).project(camera);
+ const x=lerp(card.left+card.width/2,landingX,travel);
+ const y=lerp(innerHeight*.43+22,Math.min(landingY,innerHeight*.91),travel)-arc*innerHeight*.12;
+ camera.setViewOffset(width,height,(jumpAnchor.x+1)*width/2-x,(1-jumpAnchor.y)*height/2-y,innerWidth,innerHeight);
+ bot.updateMatrixWorld(true);
+ const release=1-smoothstep(progress,0,.20);
+ for(const [i,edge] of [cards[0].getBoundingClientRect().right-13,cards[2].getBoundingClientRect().left+13].entries()){
+  const limb=arms[i];
+  gripTarget.copy(pointOnPlane(edge,innerHeight*.43-3,.16));
+  const rest=bot.worldToLocal(limb.elbow.localToWorld(limb.grip.clone()));
+  reach(limb,rest.lerp(bot.worldToLocal(gripTarget),release));
+ }
+ const clipBottom=lerp(innerHeight*.43+20,innerHeight,smoothstep(progress,0,.16));
+ renderer.setViewport(0,0,innerWidth,innerHeight);
+ renderer.setScissor(0,innerHeight-clipBottom,innerWidth,clipBottom);
+ renderer.setScissorTest(true);
+ renderer.autoClear=false;
+ renderer.clearDepth();
+ renderer.render(scene,camera);
+ renderer.autoClear=true;
+ renderer.setScissorTest(false);
+ camera.clearViewOffset();
+}
+function pointOnPlane(x,y,z=0){
+ rayPoint.set(x/innerWidth*2-1,1-y/innerHeight*2,.5).unproject(camera);
+ rayOrigin.copy(camera.position);
+ rayPoint.sub(rayOrigin);
+ return rayOrigin.addScaledVector(rayPoint,(z-rayOrigin.z)/rayPoint.z);
+}
+function reach(limb,target){
+ const {arm,elbow,grip,side}=limb;
+ armBind.copy(elbow.position);
+ const upperLength=armBind.length(),lowerLength=grip.length();
+ armDirection.copy(target).sub(arm.position);
+ const distance=clamp(armDirection.length(),.18,upperLength+lowerLength-.015);
+ if(armDirection.lengthSq()<.0001)armDirection.set(0,-1,0);
+ armDirection.normalize();
+ elbowDirection.set(side*.65,-.45,-.50);
+ elbowDirection.addScaledVector(armDirection,-elbowDirection.dot(armDirection)).normalize();
+ const along=(upperLength*upperLength+distance*distance-lowerLength*lowerLength)/(2*distance);
+ const bend=Math.sqrt(Math.max(0,upperLength*upperLength-along*along));
+ elbowDirection.multiplyScalar(bend).addScaledVector(armDirection,along);
+ arm.quaternion.setFromUnitVectors(armBind.normalize(),lowerDirection.copy(elbowDirection).normalize());
+ lowerDirection.copy(armDirection).multiplyScalar(distance).sub(elbowDirection);
+ lowerDirection.applyQuaternion(inverse.copy(arm.quaternion).invert()).normalize();
+ elbow.quaternion.setFromUnitVectors(localTarget.copy(grip).normalize(),lowerDirection);
+}
+function jumpHeight(ms){
+ if(ms<=0)return 0;
+ if(ms<180)return -.12*smoothstep(ms,0,180);
+ if(ms<610)return lerp(-.12,1,smoothstep(ms,180,610));
+ return 1+.14*Math.sin(Math.PI*smoothstep(ms,610,730));
+}
+function rechargeTiming(ms){
+ return {
+  approach:smoothstep(ms,0,420),
+  sit:smoothstep(ms,420,1220),
+  pick:smoothstep(ms,1220,1500),
+  plug:smoothstep(ms,1500,1870),
+  charging:ms>=1870
+ };
+}
+function chairJumpProgress(cardTop,roomTop,height){
+ const launch=height*.43,landing=height*.31;
+ return clamp((launch-cardTop)/Math.max(1,roomTop-cardTop+launch-landing),0,1);
+}
+let mx=0,my=0,sx=0,sy=0,lastFrame,lastScroll,elapsed=0,idleTime=0,stage,needsRender=true;
+let heroLift=0,readingLift=0,bodyYaw=-.35,headYaw=-.35,lastWide,arrivedFromJump=false;
+addEventListener('pointermove',event=>{
+ if(!motionReduced&&event.pointerType!=='touch'){
+  mx=event.clientX/innerWidth*2-1;
+  my=event.clientY/innerHeight*2-1;
+ }
+},{passive:true});
+function resize(){
+ camera.aspect=innerWidth/innerHeight;
+ camera.updateProjectionMatrix();
+ renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+ renderer.setSize(innerWidth,innerHeight,false);
+ needsRender=true;
+}
+addEventListener('resize',resize);
+function resetPose(blink=1){
+ chargeScreen.visible=false;
+ eyes.forEach(eye=>{
+  eye.visible=true;
+  eye.scale.y=blink*1.2;
+ });
+ bot.position.copy(neutral);
+ for(const {arm,elbow,side} of arms){
+  arm.rotation.set(0,0,-side*.18);
+  elbow.rotation.set(0,0,0);
+ }
+ for(const {hip,knee} of legs){
+  hip.rotation.set(0,0,0);
+  knee.rotation.set(0,0,0);
+ }
+}
+function render(t){
+ const paused=window.portfolioMotionPaused;
+ const dt=lastFrame===undefined||paused?0:Math.min(t-lastFrame,50);
+ lastFrame=t;
+ requestAnimationFrame(render);
+ if(document.hidden)return;
+ const wide=desktop.matches;
+ if(lastWide!==wide){
+  lastWide=wide;
+  stage=undefined;
+  resize();
+ }
+ if(!wide){
+  if(!needsRender)return;
+  needsRender=false;
+  room.visible=false;
+  port.visible=false;
+  pedestal.visible=true;
+  pedestal.position.set(0,-2.4,0);
+  mount.style.zIndex='';
+  mount.style.clipPath='';
+  resetPose();
+  bot.rotation.y=-.13;
+  head.rotation.set(.08,-.05,.025);
+  camera.position.set(.65,1.15,12.3);
+  camera.lookAt(0,.64,0);
+  renderer.setViewport(0,0,innerWidth,innerHeight);
+  renderer.render(scene,camera);
+  return;
+ }
+ const projectTop=projects.getBoundingClientRect().top;
+ const readingTop=experience.getBoundingClientRect().top;
+ const role=description.getBoundingClientRect();
+ const card=cards[1].getBoundingClientRect();
+ const view=roomView.getBoundingClientRect();
+ const jump=motionReduced?0:chairJumpProgress(card.top,view.top,innerHeight);
+ const chargeView=view.bottom>0&&(motionReduced?view.top<innerHeight*.93:jump===1);
+ const inTransit=jump>0&&jump<1;
+ const cardsInView=card.top<innerHeight*.83&&card.bottom>0;
+ const reading=readingTop<innerHeight*.72&&role.top<innerHeight*.78&&projectTop>innerHeight*.68;
+ const next=chargeView?'room':inTransit?'transfer':cardsInView?'projects':reading?'reading'
+  :intro.getBoundingClientRect().bottom>innerHeight*.52?'intro':'neutral';
+ if(paused&&!needsRender&&lastScroll===scrollY)return;
+ lastScroll=scrollY;
+ needsRender=false;
+ if(next!==stage){
+  arrivedFromJump=next==='room'&&stage==='transfer';
+  stage=next;
+  elapsed=paused?Infinity:0;
+  startPosition.copy(bot.position);
+ }
+ if(!paused){
+  if(stage!=='room'||view.top<innerHeight*.53)elapsed+=dt;
+  idleTime+=dt/1000;
+  sx=damp(sx,mx,6,dt/1000);
+  sy=damp(sy,my,6,dt/1000);
+ }
+
+ const activeRoom=stage==='room';
+ const activeTransfer=stage==='transfer';
+ const activeProjects=stage==='projects';
+ const activeReading=stage==='reading';
+ const activeIntro=stage==='intro';
+ const et=motionReduced?Infinity:elapsed;
+ const liftIntro=activeIntro?smoothstep(et,120,520):0;
+ heroLift=motionReduced?liftIntro:lerp(heroLift,liftIntro,Math.min(1,dt/300));
+ const zoom=clamp(scrollY/Math.max(1,expertise.offsetTop),0,1);
+ room.visible=activeRoom||activeTransfer;
+ port.visible=activeRoom;
+ pedestal.visible=!activeRoom&&!activeTransfer&&!activeProjects;
+ mount.style.zIndex=activeRoom||activeTransfer||activeProjects?'6':'';
+ mount.style.clipPath=activeProjects?`inset(0 0 ${Math.max(innerHeight-card.top-20,0)}px 0)`:'';
+ resetPose(motionReduced?1:1-.85*smoothstep(Math.sin(idleTime*1.2),.987,1));
+ if(activeTransfer){
+  jumpToChair(jump,view,card,sx,sy);
+  return;
+ }
+ camera.aspect=activeRoom?Math.max(view.width,1)/Math.max(view.height,1):innerWidth/innerHeight;
+ camera.updateProjectionMatrix();
+ renderer.setViewport(0,0,innerWidth,innerHeight);
+ if(activeRoom){
+  renderer.setViewport(view.left,innerHeight-view.bottom,view.width,view.height);
+  aimAtRoom(view);
+  const {approach,sit,pick,plug,charging}=rechargeTiming(et+(arrivedFromJump?420:0));
+  bot.position.set(lerp(-1.65,-.40,approach),-.30*sit,lerp(.67,-.08,sit));
+  bot.rotation.y=lerp(lerp(.54,-.40,approach),.14,sit);
+  head.rotation.set(.08+.24*(pick-plug),.12+.32*(pick-plug),.03);
+  for(const {hip,knee} of legs){
+   hip.rotation.x=-1.46*sit;
+   knee.rotation.x=1.46*sit;
+  }
+  const {arm,elbow,grip}=arms[1];
+  bot.updateMatrixWorld(true);
+  const armRest=elbow.localToWorld(grip.clone());
+  gripTarget.copy(armRest).lerp(connectorRest,pick);
+  plugTarget.copy(portPosition);
+  bot.localToWorld(plugTarget);
+  gripTarget.lerp(plugTarget,plug);
+  reach(arms[1],bot.worldToLocal(gripTarget.clone()));
+  arm.updateMatrixWorld(true);
+  if(plug>0)connector.position.copy(elbow.localToWorld(grip.clone())).lerp(plugTarget,plug);
+  else connector.position.copy(connectorRest);
+  connector.rotation.y=bot.rotation.y*plug;
+  portLight.visible=charging;
+  chargeScreen.visible=charging;
+  eyes.forEach(eye=>{eye.visible=!charging});
+  drawCable(connector.position);
+ }else{
+  camera.position.set(1.05+sx*.22,1.05+zoom*.65-sy*.08,activeProjects?10.5:11.6-zoom*2.5);
+  camera.lookAt(0,.4+zoom*.8,0);
+  camera.updateMatrixWorld();
+  bodyYaw=motionReduced?Number(activeReading)*.45-.35:damp(bodyYaw,activeReading?.25:activeProjects?0:-.35+zoom*.18+sx*.12,9,dt/1000);
+  headYaw=motionReduced?Number(activeReading)*.55-.22:damp(headYaw,activeReading?.53:activeProjects?.05:activeIntro?-.47:-.20+zoom*.20+sx*.25,9,dt/1000);
+  bot.rotation.y=bodyYaw;
+  head.rotation.set(.09+sy*.10,headYaw,activeReading?.04:.12*(1-zoom));
+  bot.position.y=motionReduced?0:Math.sin(idleTime*1.4)*.02;
+  arms[0].arm.rotation.z=.18-.95*heroLift;
+  arms[0].elbow.rotation.set(-.53*heroLift,0,-.57*heroLift);
+  readingLift=motionReduced?Number(activeReading):damp(readingLift,Number(activeReading),7,dt/1000);
+  arms[1].arm.rotation.z=-.18+.92*readingLift;
+  arms[1].elbow.rotation.set(-.66*readingLift,0,.66*readingLift);
+  if(activeReading){
+   const left=title.getBoundingClientRect();
+   const labelClearance=innerWidth<1500?roleLabel.getBoundingClientRect().bottom+innerHeight*.40:0;
+   desired.copy(pointOnPlane(lerp(left.left,role.left,.48),Math.max(innerHeight*.55,labelClearance)));
+   bot.position.lerpVectors(startPosition,desired,smoothstep(et,0,560));
+   bot.updateMatrixWorld(true);
+   const limb=arms[1];
+   gripTarget.copy(pointOnPlane(role.left-55,innerHeight*.60,.3));
+   const resting=bot.worldToLocal(limb.elbow.localToWorld(limb.grip.clone()));
+   reach(limb,resting.lerp(bot.worldToLocal(gripTarget),readingLift));
+  }else if(activeProjects){
+   const lift=jumpHeight(et);
+   const middle=card.left+card.width/2;
+   const ease=smoothstep(et,0,180);
+   desired.copy(pointOnPlane(middle,card.top+22+(1-lift)*innerHeight*.42));
+   bot.position.lerpVectors(startPosition,desired,ease);
+   bot.rotation.y=0;
+   head.rotation.set(.06,0,.012);
+   bot.updateMatrixWorld(true);
+   const gripIn=smoothstep(et,350,705);
+   for(const [i,edge] of [cards[0].getBoundingClientRect().right-13,cards[2].getBoundingClientRect().left+13].entries()){
+    const limb=arms[i];
+    gripTarget.copy(pointOnPlane(edge,card.top-3,.16));
+    const local=bot.worldToLocal(gripTarget);
+    const resting=bot.worldToLocal(limb.elbow.localToWorld(limb.grip.clone()));
+    reach(limb,resting.lerp(local,gripIn));
+   }
+  }else{
+   bot.position.lerpVectors(startPosition,bot.position,smoothstep(et,0,420));
+  }
+  pedestal.position.set(bot.position.x,-2.4+bot.position.y,0);
+ }
+ renderer.render(scene,camera);
+}
+requestAnimationFrame(render);
 }catch(error){document.body.classList.add('no-3d');console.warn('3D scene unavailable',error)}
 </script>
 </body>
 </html>
-
